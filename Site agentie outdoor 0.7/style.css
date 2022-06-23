@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+/* COLOR VARIABLES */
+:root {
+  --color-navbar: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(29, 26, 65, 0.7) 100%
+  );
+
+  --color-primary: linear-gradient(to right, #005c97, #363795);
+}
+/* END OF COLOR VARIABLES */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+
+  background-color: #f3f3f3;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+  height: 55px;
+
+  color: white;
+
+  background: var(--color-navbar);
+  backdrop-filter: blur(25px);
+
+  box-shadow: 0px 0px 12px black;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.logo {
+  margin-left: 100px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-right: 100px;
+}
+
+.navbar ul li {
+  margin-right: 50px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+
+  text-shadow: 0px 0px 10px black;
+
+  display: inline-block;
+  transition: 300ms;
+}
+
+.navbar ul li a:hover {
+  transform: scale(135%);
+
+  text-shadow: 0px 0px 10px black;
+}
+
+.sticky {
+  position: fixed;
+}
+/*END OF NAVIGATION BAR */
+
+/* SLIDER */
+.slider {
+  width: auto;
+  height: 75vh;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  transition: transform 1s ease-in-out;
+  position: absolute;
+
+  z-index: -1;
+}
+
+.slide img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#image--1 {
+  z-index: 0;
+}
+/*END OF SLIDER */
+
+/* INTRO */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 100px;
+}
+
+.message {
+  font-size: 25px;
+
+  text-decoration: none;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 60px;
+  box-shadow: 0px 0px 15px black;
+
+  transform: translateY(-50%);
+
+  color: #fff;
+
+  cursor: pointer;
+
+  background: var(--color-primary);
+}
+
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+/* END OF INTRO */
+
+main {
+  box-shadow: 0px 0px 15px black;
+}
+
+/* SECTIONS */
+.section {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 1.5rem;
+  box-shadow: 0px 0px 30px #ddd;
+  margin-bottom: 2em;
+  width: 75rem;
+
+  transform: scale(90%);
+}
+
+.section h2 {
+  margin-top: 0;
+  transform: translateY(-50%);
+}
+
+.section h2 span {
+  font-size: 40px;
+  font-weight: lighter;
+  text-shadow: none;
+  cursor: default;
+
+  color: #fff;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.section h2 span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: -7%;
+  left: -10%;
+  height: 110%;
+  width: 120%;
+  z-index: -1;
+
+  box-shadow: 0px 0px 5px #37383d;
+
+  transform: scale(1.07, 1.05) skewX(-20deg);
+  transform: scale(1.07, 1.05) skewX(-20deg);
+  background: var(--color-primary);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* END OF SECTIONS */
+
+/* CALENDAR */
+.month-bar {
+  list-style-type: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  overflow-x: scroll;
+
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+.month-bar .month {
+  font-size: 22px;
+  margin: 20px 25px;
+
+  cursor: pointer;
+}
+
+.selected-month {
+  font-weight: 800;
+  color: #005c97;
+}
+
+.faded {
+  opacity: 50%;
+}
+
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  grid-auto-rows: minmax(200px, auto);
+
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* EVENT CARDS */
+.card {
+  transition: transform 500ms, opacity 1s;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px black;
+  transform: translateY(-7px);
+
+  cursor: pointer;
+}
+
+.card-title {
+  font-size: 22px;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+
+  color: #fff;
+
+  background: var(--color-primary);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-body {
+  width: 100%;
+  height: 100%;
+
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+
+  padding-bottom: 1.3rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.card p {
+  font-size: 22px;
+  margin-top: 0.8rem;
+  margin-left: 3rem;
+}
+
+.card-btn {
+  text-decoration: none;
+
+  padding: 17px;
+  width: 100%;
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.card-btn a {
+  text-decoration: none;
+  color: #005c97;
+
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.no-events {
+  margin: 80px auto;
+  text-align: center;
+  font-size: 25px;
+
+  transition: opacity 500ms;
+}
+/* END OF EVENT CARDS */
+/* END OF CALENDAR */
+
+/* ABOUT */
+.container {
+  font-size: 22px;
+
+  margin-top: 40px;
+  margin-bottom: 60px;
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: flex-start;
+
+  width: 85%;
+  height: 100%;
+}
+
+.container .about {
+  text-align: center;
+  width: 55%;
+}
+
+.container img {
+  width: 40%;
+  height: 250px;
+
+  object-fit: cover;
+  object-position: center;
+}
+/* END OF ABOUT */
+
+/* CONTACT */
+.contact-title {
+  margin-top: 1rem;
+  font-size: 25px;
+}
+
+.container .contact-p span {
+  font-weight: bold;
+  color: #005c97;
+}
+/* END OF CONTACT */
+
+/* FOOTER */
+.footer {
+  padding: 5rem 3rem;
+  background-color: #37383d;
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.footer-item {
+  margin-right: 3rem;
+}
+
+.footer-link {
+  color: #eee;
+  text-decoration: none;
+}
+
+.footer__copyright {
+  font-size: 22px;
+  color: #aaa;
+  text-align: center;
+}
+/*END OF FOOTER */
